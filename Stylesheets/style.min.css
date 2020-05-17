@@ -264,21 +264,7 @@ template {
     display: none
 }
 
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url("../fonts/HelveticaNeue-BoldExt.woff2") format("woff2"), url("../fonts/HelveticaNeue-BoldExt.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap
-}
 
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url("../fonts/HelveticaNeue-Extended.woff2") format("woff2"), url("../fonts/HelveticaNeue-Extended.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap
-}
 
 @-webkit-keyframes shake {
     10%, 90% {
@@ -334,8 +320,7 @@ template {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     outline: none;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
-}
+    font-family: 'Cairo', sans-serif;}
 
 html {
     -webkit-text-size-adjust: 100%;
@@ -351,7 +336,7 @@ html {
 }
 
 body {
-    background-color: #e8e8e8;
+    background-color: #7f75fe;
     font-size: 18px;
     line-height: 1.25;
     overflow-x: hidden;
@@ -360,7 +345,7 @@ body {
 }
 
 body > div#bg {
-    background-color: #e8e8e8;
+    background-color: #dde4ee;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -380,7 +365,7 @@ body > div#bg {
 h1, h2, h3, h4, h5, h6, button {
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.25;
     font-weight: normal;
     text-transform: inherit
@@ -398,7 +383,7 @@ button {
 
 @media only screen and (max-width: 960px) {
     body, h1, h2, h3, h4, h5, h6, button {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.25
     }
 }
@@ -444,14 +429,15 @@ img.lazyloaded {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding: 24px;
+    padding: 40px;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     text-transform: uppercase;
     z-index: 999;
     -webkit-transition: top 300ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
-    transition: top 300ms cubic-bezier(0.36, 0.07, 0.19, 0.97)
+    transition: top 300ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    /* transform: translate(25%,0%); */
 }
 
 #header > div {
@@ -474,78 +460,89 @@ img.lazyloaded {
 }
 
 #header > div > .title {
-    background-color: #d4d4d4;
-    color: #000;
+    background-color: #7f75fe;
+    color: #fff;
     font-weight: bold;
-    text-align: left
+    text-align: left;
+    box-shadow: 0 0 10px #fff;
 }
 
 #header > div > .categ {
-    background-color: #b7b7b7;
-    color: #000;
-    text-align: left
+    background-color: #7f75fe;
+    color: #fff;
+    text-align: left;
+    box-shadow: 0 0 10px #fff;
 }
 
 #header > div > .link {
-    background-color: #000;
+    background-color: #7f75fe;
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
-    text-align: left
+    text-align: left;
+    box-shadow: 0 0 10px #fff;
 }
 
 #header > div > .button {
-    background-color: #fff;
+    background-color: #fafcff;
     color: #000;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     cursor: pointer;
-    text-align: left
+    text-align: left;
+    box-shadow: 0 0 10px #fff;
 }
 
 #header > div > .link:focus, #header > div > .link.active, #header > div > .button:focus,
 #header > div > .button.active {
-    background-color: #64ffa9;
-    color: #000;
+    background-color: #7f75fe;
+    color: #fff;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000px;
     perspective: 1000px;
-    -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+    box-shadow: 0 0 10px #fff;
+    /* -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both */
 }
 
 #header > div > .link:hover, #header > div > .link.active:hover, #header > div > .button:hover,
 #header > div > .button.active:hover {
-    background-color: #b7b7b7;
-    color: #000
+    background-color: #7f75fe;
+    color: #fff;
+    box-shadow: 0 0 10px #fff;
 }
 
 @media only screen and (max-width: 960px) {
     #header {
         position: -webkit-sticky;
-        position: sticky
+        position: sticky;
     }
 
-    #header > div {
+    #header > .navigation {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    /* #header > div {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap
-    }
+    } */
 }
 
-#container {
-    padding: 0;
+.container {
+    padding: 10px;
     width: 100%;
     max-width: 100%
 }
 
-#container > #grid {
+.container > #grid {
     position: relative;
     width: 100%
 }
 
-#container > #grid .item {
+.container > #grid .item {
     display: block;
     position: absolute;
     width: 19.5%;
@@ -554,23 +551,23 @@ img.lazyloaded {
     z-index: 1
 }
 
-#container > #grid .item .item-content {
+.container > #grid .item .item-content {
     position: relative;
     width: 100%
 }
 
-#container > #grid .item .item-content img {
+.container > #grid .item .item-content img {
     width: 100%;
     height: auto;
     -webkit-transform: scale(1.15);
     transform: scale(1.15)
 }
 
-#container > #grid .item-content a {
+.container > #grid .item-content a {
     display: block
 }
 
-#container > #grid .item-content a:hover, #container > #grid .item-content a:focus {
+.container > #grid .item-content a:hover, #container > #grid .item-content a:focus {
     outline: none;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -583,39 +580,39 @@ img.lazyloaded {
 }
 
 @media only screen and (max-width: 1440px) {
-    #container > #grid .item {
+    .container > #grid .item {
         width: 24.5%
     }
 }
 
 @media only screen and (max-width: 960px) {
-    #container > #grid .item {
+    .container > #grid .item {
         width: 49.5%
     }
 }
 
 @media only screen and (max-width: 640px) {
-    #container > #grid .item {
+    .container > #grid .item {
         width: 100%
     }
 }
 
 @media only screen and (max-width: 320px) {
-    #container > #grid {
+    .container > #grid {
         overflow-y: hidden
     }
 
-    #container > #grid .item {
+    .container > #grid .item {
         width: 100%
     }
 }
 
-#container > div.module {
+.container > div.module {
     padding: 0 24px;
     margin-bottom: 24px
 }
 
-#container > div.module > div {
+.container > div.module > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -633,7 +630,7 @@ img.lazyloaded {
     flex-wrap: wrap
 }
 
-#container > div.module > div.group > div, #container > div.module div.kt {
+.container > div.module > div.group > div, .container > div.module div.kt {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -647,19 +644,19 @@ img.lazyloaded {
     flex-wrap: wrap
 }
 
-#container > div.module > div.group > div.subgroup {
+.container > div.module > div.group > div.subgroup {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column
 }
 
-#container > div.module span.title, #container > div.module span.year,
-#container > div.module div.text, #container > div.module a.text, #container > div.module div.kt p {
+.container > div.module span.title, .container > div.module span.year,
+.container > div.module div.text, .container > div.module a.text, .container > div.module div.kt p {
     padding: 16px 24px
 }
 
-#container > div.module span.title {
+.container > div.module span.title {
     background-color: #d4d4d4;
     color: #000;
     text-align: left;
@@ -667,38 +664,32 @@ img.lazyloaded {
     text-transform: uppercase
 }
 
-#container > div.module span.year {
-    background-color: #b7b7b7;
-    color: #000;
-    border-radius: 30px;
-    text-align: left
-}
 
-#container > div.module div.text, #container > div.module div.kt p {
+.container > div.module div.text, .container > div.module div.kt p {
     background-color: #fff;
     color: #000;
     border-radius: 30px;
     text-align: left
 }
 
-#container > div.module div.kt p {
+.container > div.module div.kt p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
 }
 
-#container > div.module span.grey {
+.container > div.module span.grey {
     color: #969696
 }
 
-#container > div.module a.text {
+.container > div.module a.text {
     background-color: #000;
     color: #fff;
     border-radius: 30px;
     text-align: left
 }
 
-#container > div.module a.text:focus {
+.container > div.module a.text:focus {
     background-color: #64ffa9;
     color: #000;
     -webkit-transform: translate3d(0, 0, 0);
@@ -711,23 +702,23 @@ img.lazyloaded {
     animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
 }
 
-#container > div.module a.text:hover {
+.container > div.module a.text:hover {
     background-color: #b7b7b7;
     color: #000
 }
 
-#container > div.module > div.group:not(:last-child), #container > div.module > div.group > div:not(:last-child),
-#container > div.module div.text:not(:last-child), #container > div.module a.text:not(:last-child),
-#container > div.module div.kt p:not(:last-child) {
+.container > div.module > div.group:not(:last-child), .container > div.module > div.group > div:not(:last-child),
+.container > div.module div.text:not(:last-child), .container > div.module a.text:not(:last-child),
+.container > div.module div.kt p:not(:last-child) {
     margin-bottom: 6px
 }
 
-#container > div.module.cascade > div.image img {
+.container > div.module.cascade > div.image img {
     width: auto;
     height: auto
 }
 
-#container > div.module.cascade > div.video iframe {
+.container > div.module.cascade > div.video iframe {
     background-color: transparent;
     border: none;
     height: 480px;
@@ -737,15 +728,29 @@ img.lazyloaded {
 }
 
 @media only screen and (max-width: 960px) {
-    #container > div.module.cascade > div.video iframe {
+    .container > div.module.cascade > div.video iframe {
         height: 180px
     }
 
-    #container > div.module.cascade > div.image img, #container > div.module.cascade > div.video iframe {
+    .container > div.module.cascade > div.image img, .container > div.module.cascade > div.video iframe {
         -webkit-transform: scale(1);
         transform: scale(1);
         width: 100%
     }
+}
+
+.container#blur2.active{
+  filter: blur(15px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.navigation#blur.active{
+  filter: blur(15px);
+  pointer-events: none;
+  user-select: none;
+  opacity: .5;
+
 }
 
 #slider {
@@ -815,4 +820,538 @@ img.lazyloaded {
     height: auto
 }
 
+
+.projectClass {
+  position: relative;
+  display : flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100%;
+  align-items: center;
+  border-bottom : 0.1em dashed white;
+  -ms-overflow-style: none;
+}
+
 /*# sourceMappingURL=style.min.css.map */
+h2{
+  color: #fff;
+  font-size: 15px;
+  /* position: -webkit-sticky;
+  position: sticky; */
+}
+
+#Art {
+position: fixed;
+top: 0%;
+left: 5%;
+width: 90%;
+height: 100%;
+background-color: transparent;
+visibility: hidden;
+opacity: 0;
+transition: 0.5s;
+overflow-y: scroll;
+}
+
+#Art.show {
+top: 0%;
+visibility: visible;
+opacity: 1;
+transition: 0.5s;
+z-index: 9999;
+}
+
+#Art > .close {
+top:20%;
+left: 20%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background-color: #fff;
+width: 2.2%;
+box-shadow: 0 0px 10px #7f75fe;
+text-align: right;
+padding-right: .7%;
+z-index: 99999;
+
+}
+
+#Art > .textbox1 {
+top:18%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background: #7f75fe;
+width: 20%;
+box-shadow: 0 0 10px #7f75fe;
+padding: 1%;
+
+}
+
+#Art > .pictures1{
+top: 14%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+left: 23.5%;
+position: absolute;
+}
+
+ #SweetNothings {
+  position: fixed;
+  top: 0%;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  overflow-y: scroll;
+}
+
+#SweetNothings.show {
+  top: 0%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+#SweetNothings > .close {
+  top:20%;
+  left: 20%;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-end;
+  background-color: #fff;
+  width: 2.2%;
+  box-shadow: 0 0px 10px #7f75fe;
+  /* height: 100%; */
+  text-align: right;
+  padding-right: .7%;
+  z-index: 99999;
+
+}
+
+ #SweetNothings > .textbox2 {
+  top:18%;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-end;
+  background: #7f75fe;
+  width: 20%;
+  box-shadow: 0 0 10px #7f75fe;
+  /* height: 100%; */
+  padding: 1%;
+
+}
+
+ #SweetNothings > .pictures2{
+  top: 16%;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-end;
+  left: 30%;
+  position: absolute;
+}
+
+#LunchLecture {
+  position: fixed;
+  top: 0%;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  overflow-y: scroll;
+}
+
+#LunchLecture.show {
+  top: 0%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+#LunchLecture > .close {
+  top:20%;
+  left: 20%;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-end;
+  background-color: #fff;
+  width: 2.2%;
+  box-shadow: 0 0px 10px #7f75fe;
+  text-align: right;
+  padding-right: .7%;
+  z-index: 99999;
+
+}
+
+#LunchLecture > .textbox3 {
+  top:18%;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-end;
+  background: #7f75fe;
+  width: 20%;
+  box-shadow: 0 0 10px #7f75fe;
+  padding: 1%;
+
+}
+
+#LunchLecture > .pictures3{
+  top: 1.7%;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-end;
+  left: 30%;
+  position: absolute;
+}
+
+#Embroidery {
+position: fixed;
+top: 0%;
+left: 5%;
+width: 90%;
+height: 100%;
+background-color: transparent;
+visibility: hidden;
+opacity: 0;
+transition: 0.5s;
+overflow-y: scroll;
+}
+
+#Embroidery.show {
+top: 0%;
+visibility: visible;
+opacity: 1;
+transition: 0.5s;
+z-index: 9999;
+}
+
+#Embroidery > .close {
+top:20%;
+left: 20%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background-color: #fff;
+width: 2.2%;
+box-shadow: 0 0px 10px #7f75fe;
+text-align: right;
+padding-right: .7%;
+z-index: 99999;
+
+}
+
+#Embroidery > .textbox4 {
+top:18%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background: #7f75fe;
+width: 20%;
+box-shadow: 0 0 10px #7f75fe;
+padding: 1%;
+
+}
+
+#Embroidery > .pictures4{
+top: 1.7%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+left: 30%;
+position: absolute;
+}
+
+
+#Malkovich {
+position: fixed;
+top: 0%;
+left: 5%;
+width: 90%;
+height: 100%;
+background-color: transparent;
+visibility: hidden;
+opacity: 0;
+transition: 0.5s;
+overflow-y: scroll;
+}
+
+#Malkovich.show {
+top: 0%;
+visibility: visible;
+opacity: 1;
+transition: 0.5s;
+z-index: 9999;
+}
+
+#Malkovich > .close {
+top:20%;
+left: 20%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background-color: #fff;
+width: 2.2%;
+box-shadow: 0 0px 10px #7f75fe;
+text-align: right;
+padding-right: .7%;
+z-index: 99999;
+
+}
+
+#Malkovich > .textbox5 {
+top:18%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background: #7f75fe;
+width: 20%;
+box-shadow: 0 0 10px #7f75fe;
+padding: 1%;
+
+}
+
+#Malkovich > .pictures5{
+top: 6%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+left: 23%;
+position: absolute;
+}
+
+#Landscape {
+position: fixed;
+top: 0%;
+left: 5%;
+width: 90%;
+height: 100%;
+background-color: transparent;
+visibility: hidden;
+opacity: 0;
+transition: 0.5s;
+overflow-y: scroll;
+}
+
+#Landscape.show {
+top: 0%;
+visibility: visible;
+opacity: 1;
+transition: 0.5s;
+z-index: 9999;
+}
+
+#Landscape > .close {
+top:20%;
+left: 20%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background-color: #fff;
+width: 2.2%;
+box-shadow: 0 0px 10px #7f75fe;
+text-align: right;
+padding-right: .7%;
+z-index: 99999;
+
+}
+
+#Landscape > .textbox6 {
+top:18%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background: #7f75fe;
+width: 20%;
+box-shadow: 0 0 10px #7f75fe;
+padding: 1%;
+
+}
+
+#Landscape > .pictures6{
+top: 6%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+left: 23%;
+position: absolute;
+}
+
+#Posters {
+position: fixed;
+top: 0%;
+left: 5%;
+width: 90%;
+height: 100%;
+background-color: transparent;
+visibility: hidden;
+opacity: 0;
+transition: 0.5s;
+overflow-y: scroll;
+}
+
+#Posters.show {
+top: 0%;
+visibility: visible;
+opacity: 1;
+transition: 0.5s;
+z-index: 9999;
+}
+
+#Posters > .close {
+top:20%;
+left: 20%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background-color: #fff;
+width: 2.2%;
+box-shadow: 0 0px 10px #7f75fe;
+text-align: right;
+padding-right: .7%;
+z-index: 99999;
+
+}
+
+#Posters > .textbox7 {
+top:18%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background: #7f75fe;
+width: 20%;
+box-shadow: 0 0 10px #7f75fe;
+padding: 1%;
+
+}
+
+#Posters > .pictures7 {
+top: 6%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+left: 23%;
+position: absolute;
+}
+
+#GhostSex {
+position: fixed;
+top: 0%;
+left: 5%;
+width: 90%;
+height: 100%;
+background-color: transparent;
+visibility: hidden;
+opacity: 0;
+transition: 0.5s;
+overflow-y: scroll;
+}
+
+#GhostSex.show {
+top: 0%;
+visibility: visible;
+opacity: 1;
+transition: 0.5s;
+z-index: 9999;
+}
+
+#GhostSex > .close {
+top:20%;
+left: 20%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background-color: #fff;
+width: 2.2%;
+box-shadow: 0 0px 10px #7f75fe;
+text-align: right;
+padding-right: .7%;
+z-index: 99999;
+
+}
+
+#GhostSex > .textbox8 {
+top:18%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background: #7f75fe;
+width: 20%;
+box-shadow: 0 0 10px #7f75fe;
+padding: 1%;
+
+}
+
+#GhostSex > .pictures8 {
+top: 8%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+left: 23%;
+position: absolute;
+}
+
+#Whiteness {
+position: fixed;
+top: 0%;
+left: 5%;
+width: 90%;
+height: 100%;
+background-color: transparent;
+visibility: hidden;
+opacity: 0;
+transition: 0.5s;
+overflow-y: scroll;
+}
+
+#Whiteness.show {
+top: 0%;
+visibility: visible;
+opacity: 1;
+transition: 0.5s;
+z-index: 9999;
+}
+
+#Whiteness > .close {
+top:20%;
+left: 20%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background-color: #fff;
+width: 2.2%;
+box-shadow: 0 0px 10px #7f75fe;
+text-align: right;
+padding-right: .7%;
+z-index: 99999;
+
+}
+
+#Whiteness > .textbox9 {
+top:18%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+background: #7f75fe;
+width: 20%;
+box-shadow: 0 0 10px #7f75fe;
+padding: 1%;
+
+}
+
+#Whiteness > .pictures9 {
+top: 14%;
+position: -webkit-sticky;
+position: sticky;
+align-self: flex-end;
+left: 23%;
+position: absolute;
+}
